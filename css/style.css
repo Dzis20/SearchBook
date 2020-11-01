@@ -1,0 +1,72 @@
+body {
+    background-color: #fff;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: #000;
+    background-image: url('../img/books.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+.wrapper {
+    
+}
+h1 {
+    font-size: 44px;
+    text-align: center;
+}
+
+h2.section-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 60px;
+    text-align: center;
+}
+span.for-title {
+    font-size: 44px;
+    font-weight: bold;
+    margin-bottom: 60px;
+}
+form.search-form {
+    display: flex;
+    margin-bottom: 50px;
+}
+input#search-input {
+    width: 80%;
+    height: 60px;
+    border: 2px solid grey;
+    border-right: none;
+    padding-left: 50px;
+}
+input#search-btn {
+    width: 40%;
+    height: 60px;
+    background: blue;
+    color: #fff;
+    border: 2px solid grey;
+}
+.list-output {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@media(max-width: 500px) {
+    input#search-input {
+        padding-left: 0;
+        width: 100%;
+        border: 2px solid grey;
+        margin-bottom: 20px;
+    }
+    input#search-btn {
+        width: 100%;
+    }
+    form.search-form {
+        flex-direction: column;
+    }
+}
+/* npm install normalize.css */

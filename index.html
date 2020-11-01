@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Описание содержимого страницы">
+    <meta name="keywords" content="Ключевые слова через запятую">
+    <meta name="author" content="Ilya Dzis"> <!--Автор сайта-->
+    <title>SearchBook - Поиск книг</title>
+    <!-- Стили -->
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/media.css">
+    <!-- Шрифты -->
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="main">
+            <div class="container">
+                <h1>Поиск книг</h1>
+                <form action="" class="search-form">
+                    <input type="text" id="search-input" class="search-input" placeholder="Ввведите название книги..">
+                    <input type="button" value="Искать" class="search-btn" id="search-btn">
+                </form>
+
+                <div class="book-list">
+                    <h2 class="section-title">Результаты поиска</h2>
+                    <div id="list-output">
+                        <div class="card"></div>
+                        <div class="card"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>
