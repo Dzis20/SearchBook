@@ -52,7 +52,11 @@ input#search-btn {
     margin-top: 50px;
     display: none;
 }
-
+#answer {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
 @media(max-width: 500px) {
     input#search-input {
         padding-left: 0;
