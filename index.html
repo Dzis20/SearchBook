@@ -18,14 +18,23 @@
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 </head>
 <body>
     <div class="wrapper">
         <div class="main">
             <div class="container">
                 <h1>Поиск книг</h1>
-                <form action="" class="search-form">
-                    <input type="text" id="search-input" class="search-input" placeholder="Ввведите название книги..">
+                <form id="myform" class="search-form">
+                    <input type="search" id="books">
+                    <input type="button" id="search-btn" class="btn" value="Найти">
+                </form>
+                <p id="answer"></p>
+                <div id="result"></div>
+            </div>
+            
+                <!-- <form action="" class="search-form" id="myform">
+                    <input type="text" id="books" class="search-input" placeholder="Ввведите название книги..">
                     <input type="button" value="Искать" class="search-btn" id="search-btn">
                 </form>
                 <p id="answer"></p>
@@ -35,9 +44,12 @@
                     <div id="list-output">
                         
                     </div>
-                </div>
+                </div> -->
+
+
+                
             </div>
-        </div>
+            
     </div>
 
     <script src="./js/script.js"></script>

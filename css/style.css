@@ -30,7 +30,7 @@ form.search-form {
     display: flex;
     margin-bottom: 50px;
 }
-input#search-input {
+input#books {
     width: 80%;
     height: 60px;
     border: 2px solid grey;
@@ -44,21 +44,9 @@ input#search-btn {
     color: #fff;
     border: 2px solid grey;
 }
-.list-output {
-    display: flex;
-    flex-wrap: wrap;
-}
-.book-list {
-    margin-top: 50px;
-    display: none;
-}
-#answer {
-    text-align: center;
-    font-size: 30px;
-    font-weight: bold;
-}
+
 @media(max-width: 500px) {
-    input#search-input {
+    input#books {
         padding-left: 0;
         width: 100%;
         border: 2px solid grey;
@@ -71,4 +59,30 @@ input#search-btn {
         flex-direction: column;
     }
 }
-/* npm install normalize.css */
+
+
+#result{
+    margin-top:50px;
+    width: 300px;
+    margin: 0 auto;
+}
+#imagebutton {
+    position: relative;
+    left: 100px;
+    margin-bottom: 100px;
+}
+h5.title {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+h5.author {
+    text-align: center;
+    color: grey;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+#dynamic {
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
