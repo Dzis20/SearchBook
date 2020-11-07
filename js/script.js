@@ -2,37 +2,77 @@ $(document).ready(function(){
 
    $("#myform").submit(function(){
 
-         var search = $("#books").val();
+         let search = $("#books").val();
          if(search == "")
          {
-             alert("Please enter something in the field");
+            $('#answer').text('Ошибка! Ввведите название книги!');
+            $("#answer").css('color', 'red');
+         }else{
+               
+            $('#answer').text('Результаты поиска:');
+            let url = "";
+            let img = "";
+            let title = "";
+            let author = "";
+
+            $.get("https://www.googleapis.com/books/v1/volumes?q=" + search,function(response){
+
+            for(i=0;i<response.items.length;i++) {
+               title=$('<h5 class="title">' + response.items[i].volumeInfo.title + '</h5>');  
+               author=$('<h5 class="author"> By:' + response.items[i].volumeInfo.authors + '</h5>');
+               img = $('<img class="img-book" id="dynamic"><br><a href=' + response.items[i].volumeInfo.infoLink + '><button id="imagebutton" class="btn">Read more</button></a>'); 	
+               url= response.items[i].volumeInfo.imageLinks.thumbnail;
+               img.attr('src', url);
+               title.appendTo('.result');
+               author.appendTo('.result');
+               img.appendTo('.result');
+            }
+            });
+         
          }
-         else{		
-         var url = "";
-         var img = "";
-      var title = "";
-      var author = "";
+         return false;
+      });
 
-         $.get("https://www.googleapis.com/books/v1/volumes?q=" + search,function(response){
+   $("#search-btn").click(function(){
 
-          for(i=0;i<response.items.length;i++)
-          {
-           title=$('<h5 class="title">' + response.items[i].volumeInfo.title + '</h5>');  
-           author=$('<h5 class="author"> By:' + response.items[i].volumeInfo.authors + '</h5>');
-           img = $('<img class="img-book" id="dynamic"><br><a href=' + response.items[i].volumeInfo.infoLink + '><button id="imagebutton" class="btn">Read more</button></a>'); 	
-           url= response.items[i].volumeInfo.imageLinks.thumbnail;
-           img.attr('src', url);
-           title.appendTo('#result');
-           author.appendTo('#result');
-           img.appendTo('#result');
-          }
-         });
-      
-      }
-      return false;
+         let search = $("#books").val();
+         if(search == "")
+         {
+            $('#answer').text('Ошибка! Ввведите название книги!');
+            $("#answer").css('color', 'red');
+         }else{
+            
+            $('#answer').text('Результаты поиска:');
+            let url = "";
+            let img = "";
+            let title = "";
+            let author = "";
+
+            $.get("https://www.googleapis.com/books/v1/volumes?q=" + search,function(response){
+
+            for(i=0;i<response.items.length;i++) {
+               title=$('<h5 class="title">' + response.items[i].volumeInfo.title + '</h5>');  
+               author=$('<h5 class="author"> By:' + response.items[i].volumeInfo.authors + '</h5>');
+               img = $('<img class="img-book" id="dynamic"><br><a href=' + response.items[i].volumeInfo.infoLink + '><button id="imagebutton" class="btn">Read more</button></a>'); 	
+               url= response.items[i].volumeInfo.imageLinks.thumbnail;
+               img.attr('src', url);
+               title.appendTo('.result');
+               author.appendTo('.result');
+               img.appendTo('.result');
+            }
+            });
+         
+            }
+            return false;
    });
+   
 
 });
+
+
+
+   
+
 
 
 // $(document).ready(function() { 
