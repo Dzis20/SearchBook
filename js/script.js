@@ -20,7 +20,7 @@ $(document).ready(function(){
             for(i=0;i<response.items.length;i++) {
                title=$('<h5 class="title">' + response.items[i].volumeInfo.title + '</h5>');  
                author=$('<h5 class="author"> By:' + response.items[i].volumeInfo.authors + '</h5>');
-               img = $('<img class="img-book" id="dynamic"><br><a href=' + response.items[i].volumeInfo.infoLink + '><button id="imagebutton" class="btn">Read more</button></a>'); 	
+               img = $('<img class="img-book" id="dynamic"><br><a href=' + response.items[i].volumeInfo.infoLink + '><button id="imagebutton" class="btn">Подробнее</button></a>'); 	
                url= response.items[i].volumeInfo.imageLinks.thumbnail;
                img.attr('src', url);
                title.appendTo('.result');
